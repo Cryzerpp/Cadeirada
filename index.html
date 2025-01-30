@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Cadeiras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: calc(25% - 20px);
+            box-sizing: border-box;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .product-card h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .product-card p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Loja de Cadeiras</h1>
+    <p>Qualidade e conforto para o seu dia a dia</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+    <a href="#faq">FAQ</a>
+</nav>
+
+<div class="container" id="sobre">
+    <section>
+        <h2 class="section-title">Sobre a Empresa</h2>
+        <p>A Loja de Cadeiras oferece uma vasta gama de produtos que garantem conforto e qualidade para os seus clientes. Nosso compromisso é fornecer soluções adequadas para diferentes necessidades e ambientes.</p>
+    </section>
+</div>
+
+<div class="container" id="produtos">
+    <section>
+        <h2 class="section-title">Nossos Produtos</h2>
+        <h3>Cadeiras de Escritório</h3>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="cadeira_ergonomica.jpg" alt="Cadeira Ergonômica Executiva">
+                <h4>Cadeira Ergonômica Executiva</h4>
+                <p>Conforto e suporte para longas jornadas de trabalho.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_reclinavel.jpg" alt="Cadeira Reclinável">
+                <h4>Cadeira de Escritório Reclinável</h4>
+                <p>Reclinável para mais conforto e descanso.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_gamer.jpg" alt="Cadeira Gamer">
+                <h4>Cadeira Gamer</h4>
+                <p>Ideal para longas sessões de jogos com suporte ergonômico.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_reuniao.jpg" alt="Cadeira de Reunião">
+                <h4>Cadeira de Reunião</h4>
+                <p>Design moderno e confortável para reuniões.</p>
+            </div>
+        </div>
+
+        <h3>Cadeiras para Escritório Home Office</h3>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="cadeira_compacta.jpg" alt="Cadeira Compacta">
+                <h4>Cadeira Compacta</h4>
+                <p>Ideal para espaços pequenos e conforto garantido.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_giratoria.jpg" alt="Cadeira Giratória">
+                <h4>Cadeira Giratória</h4>
+                <p>Praticidade e conforto em qualquer ambiente.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_estudo.jpg" alt="Cadeira de Estudo">
+                <h4>Cadeira de Estudo</h4>
+                <p>Apoio perfeito para estudos longos e produtivos.</p>
+            </div>
+            <div class="product-card">
+                <img src="cadeira_executiva.jpg" alt="Cadeira Executiva">
+                <h4>Cadeira Executiva</h4>
+                <p>Conforto e elegância para um ambiente profissional.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container" id="contato">
+    <section>
+        <h2 class="section-title">Fale Conosco</h2>
+        <p>Tem alguma dúvida? Entre em contato com nossa equipe!</p>
+        <form>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</div>
+
+<div class="container" id="faq">
+    <section>
+        <h2 class="section-title">FAQ - Perguntas Frequentes</h2>
+        <ul>
+            <li><strong>Como posso realizar a compra?</strong><br>Você pode comprar diretamente no nosso site, escolhendo o produto desejado e seguindo as etapas de pagamento.</li>
+            <li><strong>Quais formas de pagamento são aceitas?</strong><br>Aceitamos cartões de crédito, débito, e transferências bancárias.</li>
+            <li><strong>Qual o prazo de entrega?</strong><br>O prazo de entrega varia conforme a sua localização. O prazo será informado no momento da compra.</li>
+            <li><strong>A empresa oferece garantia nas cadeiras?</strong><br>Sim, todas as nossas cadeiras têm garantia de fábrica.</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>Desenvolvido por LEONARDO SIQUEIRA NASCIMENTO</p>
+</footer>
+
+</body>
+</html>
