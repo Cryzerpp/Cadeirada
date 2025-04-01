@@ -1,180 +1,403 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Cadeiras</title>
+    <title>Cadeiras & Conforto - Especialistas em Assentos de Qualidade</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 20px;
-        }
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 10px;
+        
+        body {
+            background-color: #f9f5f0;
             color: #333;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
+        
+        header {
+            background-color: #5d4037;
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
-        .product-list {
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .slogan {
+            font-style: italic;
+            color: #d7ccc8;
+        }
+        
+        nav {
+            background-color: #8d6e63;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: #6d4c41;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1555041463-a91053b3c42d');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            background-color: #d84315;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background-color: #bf360c;
+            transform: scale(1.05);
+        }
+        
+        .categories {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #5d4037;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .categories h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #d84315;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .category-image {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .category-info {
+            padding: 20px;
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #5d4037;
+        }
+        
+        .about {
+            background-color: #efebe9;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            align-items: center;
+            gap: 40px;
         }
-        .product-card {
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: calc(25% - 20px);
-            box-sizing: border-box;
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
         }
-        .product-card img {
-            width: 100%;
-            height: auto;
+        
+        .about h2 {
+            color: #5d4037;
+            margin-bottom: 20px;
+            font-size: 2rem;
         }
-        .product-card h4 {
+        
+        .about p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background-color: #5d4037;
+            color: white;
             text-align: center;
-            margin: 10px 0;
+            padding: 40px 20px;
         }
-        .product-card p {
-            text-align: center;
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #d7ccc8;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #d7ccc8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #8d6e63;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Loja de Cadeiras</h1>
-    <p>Qualidade e conforto para o seu dia a dia</p>
-</header>
-
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#contato">Contato</a>
-    <a href="#faq">FAQ</a>
-</nav>
-
-<div class="container" id="sobre">
-    <section>
-        <h2 class="section-title">Sobre a Empresa</h2>
-        <p>A Loja de Cadeiras oferece uma vasta gama de produtos que garantem conforto e qualidade para os seus clientes. Nosso compromisso é fornecer soluções adequadas para diferentes necessidades e ambientes.</p>
-    </section>
-</div>
-
-<div class="container" id="produtos">
-    <section>
-        <h2 class="section-title">Nossos Produtos</h2>
-        <h3>Cadeiras de Escritório</h3>
-        <div class="product-list">
-            <div class="product-card">
-                <img src="cadeira_ergonomica.jpg" alt="Cadeira Ergonômica Executiva">
-                <h4>Cadeira Ergonômica Executiva</h4>
-                <p>Conforto e suporte para longas jornadas de trabalho.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_reclinavel.jpg" alt="Cadeira Reclinável">
-                <h4>Cadeira de Escritório Reclinável</h4>
-                <p>Reclinável para mais conforto e descanso.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_gamer.jpg" alt="Cadeira Gamer">
-                <h4>Cadeira Gamer</h4>
-                <p>Ideal para longas sessões de jogos com suporte ergonômico.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_reuniao.jpg" alt="Cadeira de Reunião">
-                <h4>Cadeira de Reunião</h4>
-                <p>Design moderno e confortável para reuniões.</p>
-            </div>
-        </div>
-
-        <h3>Cadeiras para Escritório Home Office</h3>
-        <div class="product-list">
-            <div class="product-card">
-                <img src="cadeira_compacta.jpg" alt="Cadeira Compacta">
-                <h4>Cadeira Compacta</h4>
-                <p>Ideal para espaços pequenos e conforto garantido.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_giratoria.jpg" alt="Cadeira Giratória">
-                <h4>Cadeira Giratória</h4>
-                <p>Praticidade e conforto em qualquer ambiente.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_estudo.jpg" alt="Cadeira de Estudo">
-                <h4>Cadeira de Estudo</h4>
-                <p>Apoio perfeito para estudos longos e produtivos.</p>
-            </div>
-            <div class="product-card">
-                <img src="cadeira_executiva.jpg" alt="Cadeira Executiva">
-                <h4>Cadeira Executiva</h4>
-                <p>Conforto e elegância para um ambiente profissional.</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-<div class="container" id="contato">
-    <section>
-        <h2 class="section-title">Fale Conosco</h2>
-        <p>Tem alguma dúvida? Entre em contato com nossa equipe!</p>
-        <form>
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome"><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem"></textarea><br><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-</div>
-
-<div class="container" id="faq">
-    <section>
-        <h2 class="section-title">FAQ - Perguntas Frequentes</h2>
+    <header>
+        <div class="logo">Cadeiras & Conforto</div>
+        <div class="slogan">Assentos que transformam seus espaços</div>
+    </header>
+    
+    <nav>
         <ul>
-            <li><strong>Como posso realizar a compra?</strong><br>Você pode comprar diretamente no nosso site, escolhendo o produto desejado e seguindo as etapas de pagamento.</li>
-            <li><strong>Quais formas de pagamento são aceitas?</strong><br>Aceitamos cartões de crédito, débito, e transferências bancárias.</li>
-            <li><strong>Qual o prazo de entrega?</strong><br>O prazo de entrega varia conforme a sua localização. O prazo será informado no momento da compra.</li>
-            <li><strong>A empresa oferece garantia nas cadeiras?</strong><br>Sim, todas as nossas cadeiras têm garantia de fábrica.</li>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Cadeiras</a></li>
+            <li><a href="#">Poltronas</a></li>
+            <li><a href="#">Escritório</a></li>
+            <li><a href="#">Promoções</a></li>
+            <li><a href="#">Contato</a></li>
         </ul>
+    </nav>
+    
+    <section class="hero">
+        <h2>Conforto e Elegância para Seu Lar ou Escritório</h2>
+        <p>Descubra nossa coleção exclusiva de cadeiras projetadas para oferecer o máximo em conforto e estilo.</p>
+        <a href="#" class="btn">Ver Coleção</a>
     </section>
-</div>
-
-<footer>
-    <p>Desenvolvido por LEONARDO SIQUEIRA NASCIMENTO</p>
-</footer>
-
+    
+    <section class="categories">
+        <h2>Nossas Categorias</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91');"></div>
+                <div class="category-info">
+                    <h3 class="category-title">Cadeiras de Escritório</h3>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c');"></div>
+                <div class="category-info">
+                    <h3 class="category-title">Cadeiras de Jantar</h3>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1592078615290-033ee584e267');"></div>
+                <div class="category-info">
+                    <h3 class="category-title">Poltronas Reclináveis</h3>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1581539250439-c96689b516dd');"></div>
+                <div class="category-info">
+                    <h3 class="category-title">Cadeiras Gamer</h3>
+                    <a href="#" class="btn">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre a Cadeiras & Conforto</h2>
+                <p>Desde 2005, a Cadeiras & Conforto tem fornecido produtos de alta qualidade para residências e escritórios em todo o país. Nossa missão é oferecer móveis que combinem conforto, durabilidade e design.</p>
+                <p>Trabalhamos apenas com materiais de primeira linha e nossos produtos passam por rigorosos testes de qualidade antes de chegar até você.</p>
+                <p>Visite nossa loja física ou compre online com a garantia de entrega rápida e seguro contra defeitos.</p>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Produtos</h3>
+                <ul>
+                    <li><a href="#">Cadeiras de Escritório</a></li>
+                    <li><a href="#">Cadeiras de Jantar</a></li>
+                    <li><a href="#">Poltronas</a></li>
+                    <li><a href="#">Cadeiras Gamer</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Institucional</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Nossa História</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Showroom</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Ajuda</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Formas de Pagamento</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul>
+                    <li>Rua dos Móveis, 123</li>
+                    <li>São Paulo - SP</li>
+                    <li>(11) 1234-5678</li>
+                    <li>contato@cadeiraseconforto.com.br</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 Cadeiras & Conforto. Todos os direitos reservados. CNPJ: 12.345.678/0001-99</p>
+        </div>
+    </footer>
 </body>
 </html>
